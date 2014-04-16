@@ -7,6 +7,7 @@ What would work this module, you need to make changes to the core system files. 
 /system/cms/modules/users/controllers/users.php
 
 After the line number 131
+
 $this->form_validation->set_rules($validation);
 
 Add:
