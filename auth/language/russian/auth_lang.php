@@ -9,26 +9,26 @@ $lang['auth:updated']	= 'Конфигурация обновлена';
 $lang['auth:deleted']	= 'Конфигурация удалена';
 $lang['auth:added']		= 'Конфигурация добавлена';
 $lang['auth:select']		= 'Выберите';
-$lang['auth:default_group_error'] = 'Please, select the default group for new users'; //
+$lang['auth:default_group_error'] = 'Выберите группу для новых пользователей'; //
 
 
 //Admin configurations
-$lang['auth:admin:config:title'] = 'All configurations';
-$lang['auth:admin:config:name'] = 'Name';
-$lang['auth:admin:config:enable'] = 'Enable';
-$lang['auth:admin:config:no_items'] = 'No items';
+$lang['auth:admin:config:title'] = 'Все конфигурации';
+$lang['auth:admin:config:name'] = 'Название';
+$lang['auth:admin:config:enable'] = 'Включен';
+$lang['auth:admin:config:no_items'] = 'Ни чего нет';
 
 //admin form
-$lang['auth:admin:form:title'] = 'Configuration form';
-$lang['auth:admin:form:name'] = 'Name of you config';
-$lang['auth:admin:form:default_config'] = 'Set default';
-$lang['auth:admin:form:default_group'] = 'Default group for new domain users';
-$lang['auth:admin:form:account_suffix'] = 'Account suffix of you domain (@domain.com)';
-$lang['auth:admin:form:base_dn'] = 'Base dn of you domain (DC=domain,DC=com)';
-$lang['auth:admin:form:domain_controllers'] = 'Domain controllers of you domain (you can specify only one DC)';
-$lang['auth:admin:form:ad_username'] = 'Domain user for read you AD';
-$lang['auth:admin:form:ad_password'] = 'Domain user password';
-$lang['auth:admin:form:real_primarygroup'] = 'This tweak will resolve the real primary group. AD does not always return the primary group.';
-$lang['auth:admin:form:use_ssl'] = 'adLDAP can use LDAP over SSL to provide extra functionality such as password changes.';
-$lang['auth:admin:form:use_tls'] = 'dLDAP can use LDAP over TLS connections rather than SSL to provide extra functionality such as password changes.';
-$lang['auth:admin:form:recursive_groups'] = 'When querying group membership, do it recursively.';
+$lang['auth:admin:form:title'] = 'Форма конфигурации';
+$lang['auth:admin:form:name'] = 'Имя конфигурации';
+$lang['auth:admin:form:default_config'] = 'Установить по умолчанию';
+$lang['auth:admin:form:default_group'] = 'Группа по-умолчанию для новых пользователей';
+$lang['auth:admin:form:account_suffix'] = 'Суффикс домена (@domain.com)';
+$lang['auth:admin:form:base_dn'] = 'Base dn (путь до юнита, в котором искать пользователей) (DC=domain,DC=com)';
+$lang['auth:admin:form:domain_controllers'] = 'Контроллеры домена (Сейчас можно указать только один контроллер)';
+$lang['auth:admin:form:ad_username'] = 'Пользователь домена для чтения AD';
+$lang['auth:admin:form:ad_password'] = 'Пароль пользователя';
+$lang['auth:admin:form:real_primarygroup'] = 'Эта настройка позволит узнать основную группу пользователя. AD не всегда возвращает основную группу.';
+$lang['auth:admin:form:use_ssl'] = 'adLDAP может использовать SSL, чтобы обеспечить дополнительную функциональность, такая как изменение пароля.';
+$lang['auth:admin:form:use_tls'] = 'adLDAP может использовать TLS, а не SSL, чтобы обеспечить дополнительную функциональность, такая как изменение пароля.';
+$lang['auth:admin:form:recursive_groups'] = 'При запросе членство в группе, делается рекурсивно.';
