@@ -35,10 +35,33 @@ class Module_Auth extends Module {
     }
 
     public function install() {
-    	return TRUE;
+    	$this->dbforge->drop_table('auth_configuration');
+		$sql = "
+			CREATE TABLE ".$this->db->dbprefix('auth_configuration')." (
+			  id int(11) NOT NULL AUTO_INCREMENT,
+			  name varchar(255) DEFAULT NULL,
+			  default_config int(11) DEFAULT NULL,
+			  default_group int(11) DEFAULT NULL,
+			  account_suffix varchar(255) DEFAULT NULL,
+			  base_dn varchar(255) DEFAULT NULL,
+			  domain_controllers varchar(255) DEFAULT NULL,
+			  ad_username varchar(255) DEFAULT NULL,
+			  ad_password varchar(255) DEFAULT NULL,
+			  real_primarygroup int(11) DEFAULT NULL,
+			  use_ssl int(11) DEFAULT NULL,
+			  use_tls int(11) DEFAULT NULL,
+			  recursive_groups int(11) DEFAULT NULL,
+			  PRIMARY KEY (id)
+			) ENGINE = MYISAM CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT = 'Auth module table';
+		";
+		if($this->db->query($sql))
+		{
+			return TRUE;
+		}
     }
 
     public function uninstall() {
+    	$this->dbforge->drop_table('auth_configuration');
         return TRUE;
     }
 
