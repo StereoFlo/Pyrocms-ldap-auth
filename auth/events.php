@@ -50,13 +50,20 @@ class Events_Auth {
 			if ($ad_check == TRUE)
 			{
 				$user_info = $this->ci->adldap->user_info($user->email, array('displayName', 'givenName', 'mail', 'sAMAccountName', 'sn', 'company', 'telephoneNumber'));
-				$profile_data['display_name'] = $user_info[0]['displayname'][0];
-				$profile_data['first_name'] = $user_info[0]['givenname'][0];
-				$profile_data['last_name'] = $user_info[0]['sn'][0];
-				$profile_data['company'] = $user_info[0]['company'][0];
-				$profile_data['phone'] = $user_info[0]['telephonenumber'][0];
+				$email = isset($user_info[0]['mail'][0]) ? $user_info[0]['mail'][0] : 'fake@fake.fake';
+				$display_name = isset($user_info[0]['displayname'][0]) ? $user_info[0]['displayname'][0] : $user_info[0]['samaccountname'][0];
+				$first_name = isset($user_info[0]['givenname'][0]) ? $user_info[0]['givenname'][0] : $user_info[0]['samaccountname'][0];
+				$last_name = isset($user_info[0]['sn'][0]) ? $user_info[0]['sn'][0] : $user_info[0]['samaccountname'][0];
+				$company = isset($user_info[0]['company'][0]) ? $user_info[0]['company'][0] : '';
+				$phone = isset($user_info[0]['telephonenumber'][0]) ? $user_info[0]['telephonenumber'][0] : '';
 				
-				$id = $this->ci->ion_auth->register($user_info[0]['samaccountname'][0], $user->password, $user_info[0]['mail'][0], $data->default_group, $profile_data);
+				$profile_data['display_name'] = $display_name;
+				$profile_data['first_name'] = $first_name;
+				$profile_data['last_name'] = $last_name;
+				$profile_data['company'] = $company;
+				$profile_data['phone'] = $phone;
+				
+				$id = $this->ci->ion_auth->register($user_info[0]['samaccountname'][0], $user->password, $email, $data->default_group, $profile_data);
 				$this->ci->ion_auth->activate($id);
 			}
 		}
