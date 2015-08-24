@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['account_suffix']	= '@megafon-retail.ru';
-$config['base_dn']		= 'DC=megafon-retail,DC=ru';
+$config['account_suffix']	= '@domain.ru';
+$config['base_dn']		= 'DC=domain,DC=ru';
 $config['domain_controllers']	= array ('');
 $config['ad_username']		= '';
 $config['ad_password']		= '';
