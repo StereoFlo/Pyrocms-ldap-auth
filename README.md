@@ -3,7 +3,7 @@ Pyrocms-ldap-auth
 
 Provides auth for Active Directory for PyroCMS 2.2.3
 
-What would work this module, you need to make changes to the core system files. You need to edit the file
+if you want to install this module, you need to make changes into the core system files. Open the file
 /system/cms/modules/users/controllers/users.php
 
 After the line number 131
